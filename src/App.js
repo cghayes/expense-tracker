@@ -1,10 +1,10 @@
-import ExpenseItem from "./components/ExpenseItem";
+import ExpenseList from "./components/ExpenseList";
+
+import "./components/styles.scss";
 
 function App() {
   return (
-    <div>
-      <ExpenseItem />
-    </div>
+    <ExpenseList />
   );
 }
 
