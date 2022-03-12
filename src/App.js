@@ -1,8 +1,10 @@
-import ExpenseList from "./components/ExpenseList";
+import React from "react";
+
+import ExpenseList from "./components/Expenses/ExpenseList";
 
 import "./components/styles.scss";
 
-function App() {
+const App = () => {
   return (
     <ExpenseList />
   );
