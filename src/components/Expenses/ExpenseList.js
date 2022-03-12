@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 
 const ExpenseList = () => {
   return (
-    <Card className="expenses">
+    <Card>
       {expenses.map(function(x, i) {
         return (
           <ExpenseItem
