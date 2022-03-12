@@ -1,8 +1,8 @@
 import React from "react";
 
+import { expenses } from "./constants";
 import ExpenseList from "./components/Expenses/ExpenseList";
 import { NewExpense } from "./components/NewExpense/NewExpense";
-import { expenses } from "./constants";
 
 import "./components/styles.scss";
 
