@@ -1,1 +1,1 @@
-#A React expense tracking app.
+# A React expense tracking app.
