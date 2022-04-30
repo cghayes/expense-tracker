@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { expenses } from "./constants";
-import ExpenseList from "./components/Expenses/ExpenseList";
+// import { DUMMY_EXPENSES } from "./constants";
+import Expenses from "./components/Expenses/Expenses";
 import { NewExpense } from "./components/NewExpense/NewExpense";
 
 import "./components/styles.scss";
 
 const App = () => {
+  const [expenses, setExpenses] = useState([]);
+
   const handleAddExpense = (expense) => {
-    console.log("in app.js")
-    console.log(expense);
+    setExpenses((prev) => [expense, ...prev]);
   }
   
   return (
     <div className="expenses">
       <NewExpense onAddExpense={handleAddExpense}/>
-      <ExpenseList items={expenses}/>
+      <Expenses items={expenses}/>
     </div>
   );
 }

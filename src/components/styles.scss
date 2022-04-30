@@ -16,6 +16,10 @@ body {
 .card {
   border-radius: 12px;
   box-shadow: 0 1px 8px #00000025;
+
+  li {
+    list-style: none;
+  }
 }
 
 .expenses {
@@ -173,11 +177,19 @@ body {
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
+
     select {
       font: inherit;
       padding: 0.5rem 3rem;
       font-weight: bold;
       border-radius: 6px;
+    }
+
+    &__message {
+      text-align: center;
+      color: #fff;
+      padding: 1rem;
+      font-weight: 600;
     }
   }
 

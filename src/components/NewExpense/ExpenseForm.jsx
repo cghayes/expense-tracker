@@ -4,6 +4,7 @@ export const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmt, setEnteredAmt] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [show, setShow] = useState(false);
 
   const handleNewTitle = (e) => {
     setEnteredTitle(e.target.value);
@@ -24,15 +25,25 @@ export const ExpenseForm = (props) => {
       title: enteredTitle,
       amount: enteredAmt,
       date: new Date(enteredDate),
-    }
+    };
 
     props.onSaveExpenseData(expenseData);
+    clearData();
+    setShow(!show);
+  };
+
+  const handleClose = () => {
+    clearData();
+    setShow(!show);
+  };
+
+  const clearData = () => {
     setEnteredTitle("");
     setEnteredAmt("");
     setEnteredDate("");
-  };
+  }
 
-  return (
+  return show ? (
     <form onSubmit={handleSubmit}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
@@ -61,8 +72,15 @@ export const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
+        <button type="submit">
+          Add Expense
+        </button>
+        <button onClick={handleClose}>Cancel</button>
       </div>
     </form>
+  ) : (
+    <div className="new-expense__actions">
+      <button onClick={() => setShow((prev) => !prev)}>Add New Expense</button>
+    </div>
   );
 };
