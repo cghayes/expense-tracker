@@ -1,26 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 
 body {
+  height: 100vh;
   margin: 0;
-  background-color: #3f3f3f;
+  padding-top: 30px;
+  background-color: #2d2c41;
 }
 
 .card {
   border-radius: 12px;
   box-shadow: 0 1px 8px #00000025;
+
+  li {
+    list-style: none;
+    animation: show 400ms 50ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top center;
+  }
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .expenses {
   padding: 1rem;
-  background-color: rgb(31, 31, 31);
+  background-color: #131313;
   margin: 2rem auto;
   width: 50rem;
   max-width: 95%;
@@ -31,7 +48,8 @@ body {
     align-items: center;
     padding: 0.5rem;
     margin: 1rem 0;
-    background-color: #4b4b4b;
+    background-color: #4192D9;
+      box-shadow: inset 0px 0px 9px #a3cdf1;
 
     &__description {
       display: flex;
@@ -55,8 +73,8 @@ body {
       font-size: 1rem;
       font-weight: bold;
       color: white;
-      background-color: #40005d;
-      border: 1px solid white;
+      background-color: #432073;
+      box-shadow: inset 0px 0px 6px #1d0e31;
       padding: 0.5rem;
       border-radius: 12px;
     }
@@ -67,53 +85,57 @@ body {
     flex-direction: column;
     width: 5.5rem;
     height: 5.5rem;
-    border: 1px solid #ececec;
-    background-color: #2a2a2a;
+    background-color: #252525;
+    box-shadow: inset 0px 0px 6px #000;
     color: white;
     border-radius: 12px;
     align-items: center;
     justify-content: center;
 
     &__month {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: bold;
+      line-height: 1.8;
     }
 
     &__year {
       font-size: 0.75rem;
+      color: #ffffff95;
     }
 
     &__day {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: bold;
     }
   }
 
   .new-expense {
-    background-color: #a892ee;
+    background-color: #04C4D9;
     padding: 1rem;
     margin: 2rem auto;
     width: 50rem;
-    max-width: 95%;
+    max-width: 100%;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 0px 9px #dcfcff;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
     button {
       font: inherit;
       cursor: pointer;
       padding: 1rem 2rem;
-      border: 1px solid #40005d;
-      background-color: #40005d;
+      border: 1px solid #432073;
+      background-color: #432073;
       color: white;
       border-radius: 12px;
       margin-right: 1rem;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     button:hover,
     button:active {
-      background-color: #510674;
-      border-color: #510674;
+      background-color: #38136b;
+      border-color: #38136b;
     }
 
     button.alternative {
@@ -124,11 +146,12 @@ body {
 
     button.alternative:hover,
     button.alternative:active {
-      background-color: #ddb3f8;
+      background-color: #432073;
     }
 
     &__controls {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 1rem;
@@ -173,11 +196,19 @@ body {
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
+
     select {
       font: inherit;
       padding: 0.5rem 3rem;
       font-weight: bold;
       border-radius: 6px;
+    }
+
+    &__message {
+      text-align: center;
+      color: #fff;
+      padding: 1rem;
+      font-weight: 600;
     }
   }
 
